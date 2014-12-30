@@ -244,6 +244,7 @@ public class Calculator extends Activity
                 mFormulaEditText.append(((Button) view).getText());
                 break;
         }
+        view.requestFocus();
     }
 
     @Override
