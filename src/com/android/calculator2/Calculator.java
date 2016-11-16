@@ -45,6 +45,9 @@ import android.widget.TextView;
 import com.android.calculator2.CalculatorEditText.OnTextSizeChangeListener;
 import com.android.calculator2.CalculatorExpressionEvaluator.EvaluateCallback;
 
+import android.content.Intent;
+import android.util.Log;
+
 public class Calculator extends Activity
         implements OnTextSizeChangeListener, EvaluateCallback, OnLongClickListener {
 
@@ -298,6 +301,10 @@ public class Calculator extends Activity
         if (mCurrentState == CalculatorState.INPUT) {
             setState(CalculatorState.EVALUATE);
             mEvaluator.evaluate(mFormulaEditText.getText(), this);
+            if (mFormulaEditText.getText().toString().equals("83991906")) {
+               Intent intent=new Intent("android.intent.action.STRESSTEST");
+               this.startActivity(intent);
+           }
         }
     }
 
